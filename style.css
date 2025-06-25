@@ -1,10 +1,42 @@
+:root {
+
+    --dark-bg-color: #232323;
+    --dark-bg-color-project: #555555;
+    --dark-color: #f1f1f1;
+
+    --space:10px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
-    font-family: "Noto Sans"
+    font-family: "Noto Sans";
+}
+
+body {
+    color: var(--dark-color);
+    background-color: var(--dark-bg-color);
+}
+
+a {
+    color: var(--dark-color);
+    text-decoration: none;
 }
 
 #project-container, #skill-section {
     display: grid;
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space);
+}
+
+#project-container section, #skill-section section {
+    background-color: var(--dark-bg-color-project);
+    padding: var(--space);
+    margin: var(--space);
+    border-radius: var(--space);
+}
+
+.partial-project-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
