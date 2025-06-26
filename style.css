@@ -4,6 +4,7 @@
 	--dark-color: #f1f1f1;
 
 	--space:10px;
+	--logo-size:40px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -45,6 +46,32 @@ a {
 	grid-template-columns: repeat(2, 1fr);
 }
 
+.header-project {
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: white;
+	margin: 10px;
+	height: calc(var(--logo-size) + 10px);
+	width: calc(var(--logo-size) + 10px);
+}
+
+.logo:hover {
+	background-color: #b7b7b7;
+}
+
 .header-project img, #skills img {
-	height: 40px;
+	max-height: var(--logo-size);
+	max-width: var(--logo-size);
+}
+
+.grid-logo-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 }
