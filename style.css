@@ -95,6 +95,11 @@ a {
 	flex: 1 var(--padding-logo);
 }
 
+#projects aside {
+	display: flex;
+	gap: var()
+}
+
 .grid-logo-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
