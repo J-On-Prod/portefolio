@@ -1,17 +1,14 @@
 const logos = document.querySelectorAll('.logo');
 
-console.log(logos);
-
 function logoOnOver(eventLogo) {
-	let altName = eventLogo.relatedTarget.alt;
-	if (!altName) {
-		altName = eventLogo.firstElementChild;
-		if (!altName) {
-			console.log(eventLogo);
-			altName = "No name";
-		}
+	let altName = "";
+	const localName = eventLogo.target.localName;
+	const className = eventLogo.target.className;
+	if (localName == "img") {
+		altName = eventLogo.target.alt;
+	} else if (localName == "div" && className == "logo") {
+		altName = eventLogo.target.firstElementChild.alt;
 	}
-	console.log(altName);
 }
 
 logos.forEach((logo) => {

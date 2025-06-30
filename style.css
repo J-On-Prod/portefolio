@@ -5,16 +5,19 @@
 	--dark-bg-color-project-opacity-hover: rgba(60, 60, 60, 0.35);
 	--dark-color: #f1f1f1;
 	--logo-bg: #f1f1f1;
-	--logo-bg-hover: #c2c2c2;
+	--logo-bg-hover: #d9d9d9;
+	--primary-color: #3b56d9;
 
 	--space: 10px;
 	--border-section: 25px;
 	--logo-size: 30px;
 	--padding-logo: 45px;
+	--padding-section: 15px;
 
 	--time-transition: 0.3s;
 
 	--bg-shadow: rgba(0, 0, 0, 0.45) 0px 3px 6px, rgba(0, 0, 0, 0.65) 0px 3px 6px;
+	--bg-logo: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -35,6 +38,16 @@ a {
 	text-decoration: none;
 }
 
+main {
+	margin: var(--space);
+}
+
+.button-primary {
+	background-color: var(--primary-color);
+	padding: var(--space);
+	border-radius: 10px;
+}
+
 /* PROJECTS - SKILLS */
 
 #projects-container, #skill-section {
@@ -48,11 +61,11 @@ a {
 	height: 100%;
 }
 
-#skill-section section, .dark-filter {
-	padding: var(--space);
+#skill-section section, .dark-filter-header, .dark-filter-hover {
+	padding: var(--padding-section);
 }
 
-#projects-container section, #skill-section section, .dark-filter {
+#projects-container section, #skill-section section, .dark-filter-hover {
 	border-radius: var(--border-section);
 }
 
@@ -87,6 +100,7 @@ a {
 	height: calc(var(--padding-logo));
 	width: calc(var(--padding-logo));
 	transition: var(--time-transition);
+	box-shadow: var(--bg-logo);
 }
 
 .logo:hover {
@@ -103,14 +117,14 @@ a {
 	background-size: cover;
 }
 
-.dark-filter {
+.dark-filter-header, .dark-filter-hover {
 	display: flex;
 	flex: 1 var(--padding-logo);
 	background-color: var(--dark-bg-color-project-opacity);
 	transition: var(--time-transition);
 }
 
-.dark-filter:hover {
+.dark-filter-hover:hover {
 	background-color: var(--dark-bg-color-project-opacity-hover);
 }
 
@@ -156,8 +170,30 @@ a {
 	text-align: right;
 }
 
+#skill-section section {
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+}
+
+.left-part {
+	display: flex;
+	flex-direction: column;
+}
+
 footer {
 	background-color: var(--dark-bg-color-project);
 	text-align: center;
 	padding: var(--space);
+}
+
+/* PROJECT DETAIL */
+
+.dark-filter-header {
+	display: flex;
+	flex-direction: column;
+}
+
+.list-logo {
+	display: flex;
+	gap: var(--space);
 }
