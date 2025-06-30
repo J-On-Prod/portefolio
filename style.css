@@ -170,7 +170,7 @@ main {
 	text-align: right;
 }
 
-#skill-section section {
+#techno-section {
 	display: grid;
 	grid-template-columns: 4fr 1fr;
 }
