@@ -52,7 +52,7 @@
 	--whi-color-950: #131317;
 
 	--bg-color: var(--whi-color-50);
-	--bg-color-project: var(--sec-color-200);
+	--bg-color-project: var(--pri-color-100);
 	--bg-color-project-opacity: rgba(60, 60, 60, 0.25);
 	--bg-color-project-opacity-hover: rgba(60, 60, 60, 0.15);
 	--color-font: var(--sec-color-950);
@@ -61,14 +61,14 @@
 	--primary-color: #3b56d9;
 
 	--space: 10px;
-	--border-section: 15px;
+	--border-section: 4px;
 	--logo-size: 30px;
 	--padding-logo: 45px;
 	--padding-section: 15px;
 
 	--time-transition: 0.3s;
 
-	--bg-shadow: rgba(0, 0, 0, 0.45) 0px 3px 6px, rgba(0, 0, 0, 0.65) 0px 3px 6px;
+	--bg-shadow: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
 	--bg-logo: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
 }
 
@@ -94,10 +94,18 @@ main {
 	margin: var(--space);
 }
 
+header h1, header h2 {
+	padding: var(--space);
+}
+
+header h2 {
+	text-align: right;
+}
+
 .button-primary {
 	background-color: var(--sec-color-500);
 	padding: var(--space);
-	border-radius: 10px;
+	border-radius: var(--border-section);
 }
 
 /* PROJECTS - SKILLS */
@@ -129,8 +137,10 @@ main {
 }
 
 #projects-container section, #skill-section section {
-	margin: var(--space);
 	box-shadow: var(--bg-shadow);
+}
+
+#projects-container section {
 	height: 100%;
 }
 
@@ -206,12 +216,13 @@ main {
 
 #project-sharepoint {
 	background-image: url(public/images/sharepoint.avif);
-	background-position: center;
+	background-position: center;, 
 }
 
 #project-registration {
-	background-image: url(public/images/word.avif);
-	background-position: top center;
+	background-image: url(public/images/registration.avif);
+	background-position: top left;
+	color: var(--whi-color-50);
 }
 
 #project-basic-explorer {
@@ -232,13 +243,9 @@ main {
 .grid-logo-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	height: fit-content;
 	gap: var(--space);
 	margin: var(--space);
-}
-
-#technology-container {
-	display: grid;
-	grid-template-columns: 4fr 1fr;
 }
 
 #technology-description {
@@ -252,6 +259,7 @@ main {
 #techno-section {
 	display: grid;
 	grid-template-columns: 4fr 1fr;
+	align-items: center;
 }
 
 .left-part {
