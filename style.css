@@ -1,9 +1,19 @@
 :root {
-	--dark-bg-color: #232323;
-	--dark-bg-color-project: #555555;
-	--dark-bg-color-project-opacity: rgba(60, 60, 60, 0.5);
-	--dark-bg-color-project-opacity-hover: rgba(60, 60, 60, 0.35);
-	--dark-color: #f1f1f1;
+	--pri-color: #FBA314; /* Yellow Orange */
+	--sec-color: #173C54; /* Blue Dark */
+	--thi-color: #2B928F; /* Green cyan */
+	--whi-color: #E6F3F7; /* White cyan */
+
+	--sec-color-50:  #EDF4FD;
+	--sec-color-200:  #ADD3F7;
+	--sec-color-500:  #4292C6;
+	--sec-color-950: #0A2231;
+
+	--bg-color: var(--whi-color);
+	--bg-color-project: var(--sec-color-200);
+	--bg-color-project-opacity: rgba(60, 60, 60, 0.25);
+	--bg-color-project-opacity-hover: rgba(60, 60, 60, 0.15);
+	--color-font: var(--sec-color-950);
 	--logo-bg: #f1f1f1;
 	--logo-bg-hover: #d9d9d9;
 	--primary-color: #3b56d9;
@@ -29,12 +39,12 @@ html, body {
 }
 
 body {
-	color: var(--dark-color);
-	background-color: var(--dark-bg-color);
+	color: var(--color-font);
+	background-color: var(--bg-color);
 }
 
 a {
-	color: var(--dark-color);
+	color: var(--color-font);
 	text-decoration: none;
 }
 
@@ -43,7 +53,7 @@ main {
 }
 
 .button-primary {
-	background-color: var(--primary-color);
+	background-color: var(--sec-color-500);
 	padding: var(--space);
 	border-radius: 10px;
 }
@@ -70,7 +80,6 @@ main {
 }
 
 #projects-container section, #skill-section section {
-	/*background-color: var(--dark-bg-color-project);*/
 	margin: var(--space);
 	box-shadow: var(--bg-shadow);
 }
@@ -87,7 +96,7 @@ main {
 }
 
 #skills section {
-	background-color: var(--dark-bg-color-project);
+	background-color: var(--bg-color-project);
 }
 
 .logo {
@@ -120,12 +129,12 @@ main {
 .dark-filter-header, .dark-filter-hover {
 	display: flex;
 	flex: 1 var(--padding-logo);
-	background-color: var(--dark-bg-color-project-opacity);
+	background-color: var(--bg-color-project-opacity);
 	transition: var(--time-transition);
 }
 
 .dark-filter-hover:hover {
-	background-color: var(--dark-bg-color-project-opacity-hover);
+	background-color: var(--bg-color-project-opacity-hover);
 }
 
 #project-word {
@@ -170,6 +179,10 @@ main {
 	text-align: right;
 }
 
+#technology-description a {
+	text-decoration: underline;
+}
+
 #techno-section {
 	display: grid;
 	grid-template-columns: 4fr 1fr;
@@ -181,7 +194,7 @@ main {
 }
 
 footer {
-	background-color: var(--dark-bg-color-project);
+	background-color: var(--bg-color-project);
 	text-align: center;
 	padding: var(--space);
 }
@@ -191,6 +204,7 @@ footer {
 .dark-filter-header {
 	display: flex;
 	flex-direction: column;
+	height: 20vh;
 }
 
 .list-logo {
