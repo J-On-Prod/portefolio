@@ -12,6 +12,9 @@ const descriptions = {
 	"Arduino": "<p>Framework in C use for embedded system like Arduino Uno, ESP32, Raspberry Pico, ... </p><p><a href='https://www.arduino.cc/'>Arduino website</a></p>",
 };
 
+/**
+ * Change the description content
+ */
 function changeDescriptions(technoName) {
 	console.log(technoName);
 	if (technoName in descriptions) {
@@ -21,6 +24,9 @@ function changeDescriptions(technoName) {
 	}
 }
 
+/**
+ * Action when the mouse go over the div
+ */
 function logoOnOver(eventLogo) {
 	let altName = "";
 	const localName = eventLogo.target.localName;
