@@ -67,11 +67,13 @@
 	--space-gap: 30px;
 	--space-logo: 10px;
 	--space-button: 15px;
-	--space-hero: 100px;
 	--space-footer: 15px;
 	--border-section: 15px;
 	--logo-size: 30px;
+	--logo-size-mobile: 25px;
+	--padding-hero: 10vw;
 	--padding-logo: 45px;
+	--padding-logo-mobile: 35px;
 	--padding-section: 15px;
 
 	--time-transition: 0.3s;
@@ -115,7 +117,7 @@ main article {
 #hero-header {
 	display: flex;
 	justify-content: space-between;
-	margin: 0 var(--space-hero);
+	margin: 0 var(--padding-hero);
 	height: 80vh;
 }
 
@@ -142,7 +144,8 @@ main article {
 
 /* PROJECTS - SKILLS */
 
-#projects-container, #skill-section {
+#projects-container,
+#skill-container {
 	display: grid;
 	gap: var(--space-gap);
 }
@@ -152,12 +155,12 @@ main article {
 	grid-auto-rows: (160px, auto);
 }
 
-#skill-section {
+#skill-container {
 	grid-template-columns: repeat(2, 1fr);
 	grid-auto-rows: 1fr;
 }
 
-#skill-section ul {
+#skill-container ul {
 	margin: 0;
 }
 
@@ -166,20 +169,20 @@ main article {
 	height: 100%;
 }
 
-#skill-section section,
+#skill-container section,
 .dark-filter-header,
 .dark-filter-hover {
 	padding: var(--padding-section);
 }
 
 #projects-container section,
-#skill-section section,
+#skill-container section,
 .dark-filter-hover {
 	border-radius: var(--border-section);
 }
 
 #projects-container section,
-#skill-section section {
+#skill-container section {
 	box-shadow: var(--bg-shadow);
 }
 
@@ -196,30 +199,8 @@ main article {
 	background-color: var(--bg-color-project);
 }
 
-#skill-section section h4 {
+#skill-container section h4 {
 	margin-top: 0;
-}
-
-.logo {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	background-color: var(--logo-bg);
-
-	height: calc(var(--padding-logo));
-	width: calc(var(--padding-logo));
-	transition: var(--time-transition);
-	box-shadow: var(--bg-logo);
-}
-
-.logo:hover {
-	background-color: var(--logo-bg-hover);
-}
-
-.logo img {
-	max-height: var(--logo-size);
-	max-width: var(--logo-size);
 }
 
 #projects-container section {
@@ -294,6 +275,28 @@ main article {
 	margin-left: var(--space-logo);
 }
 
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: var(--logo-bg);
+
+	height: calc(var(--padding-logo));
+	width: calc(var(--padding-logo));
+	transition: var(--time-transition);
+	box-shadow: var(--bg-logo);
+}
+
+.logo:hover {
+	background-color: var(--logo-bg-hover);
+}
+
+.logo img {
+	max-height: var(--logo-size);
+	max-width: var(--logo-size);
+}
+
 #technology-description {
 	text-align: right;
 }
@@ -332,4 +335,30 @@ footer {
 .list-logo {
 	display: flex;
 	gap: var(--space-logo);
+}
+
+@media only screen and (max-width: 600px) {
+	main {
+		margin: 0;
+	}
+
+	#hero-header {
+		flex-direction: column;
+	}
+
+	#projects-container,
+	#skill-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.logo {
+		height: calc(var(--padding-logo-mobile));
+		width: calc(var(--padding-logo-mobile));
+	}
+
+	.logo img {
+		max-height: var(--logo-size-mobile);
+		max-width: var(--logo-size-mobile);
+	}
 }
