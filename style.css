@@ -55,7 +55,7 @@
 	--whi-color-950: #131317;
 
 	--bg-color: var(--whi-color-50);
-	--bg-color-project: var(--sec-color-200);
+	--bg-color-project: var(--pri-color-100);
 	--bg-color-project-opacity: rgba(60, 60, 60, 0.25);
 	--bg-color-project-opacity-hover: rgba(60, 60, 60, 0.15);
 	--color-font: var(--sec-color-950);
@@ -75,7 +75,7 @@
 
 	--time-transition: 0.3s;
 
-	--bg-shadow: rgba(0, 0, 0, 0.45) 0px 3px 6px, rgba(0, 0, 0, 0.65) 0px 3px 6px;
+	--bg-shadow: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
 	--bg-logo: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
 }
 
@@ -169,6 +169,9 @@ main {
 }
 
 #projects-container section {
+}
+
+#projects-container section {
 	height: 100%;
 }
 
@@ -245,12 +248,13 @@ main {
 
 #project-sharepoint {
 	background-image: url(public/images/sharepoint.avif);
-	background-position: center;
+	background-position: center;, 
 }
 
 #project-registration {
-	background-image: url(public/images/word.avif);
-	background-position: top center;
+	background-image: url(public/images/registration.avif);
+	background-position: top left;
+	color: var(--whi-color-50);
 }
 
 #project-basic-explorer {
@@ -271,13 +275,9 @@ main {
 .grid-logo-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	height: fit-content;
 	gap: var(--space);
 	margin: var(--space);
-}
-
-#technology-container {
-	display: grid;
-	grid-template-columns: 4fr 1fr;
 }
 
 #technology-description {
@@ -291,6 +291,7 @@ main {
 #techno-section {
 	display: grid;
 	grid-template-columns: 4fr 1fr;
+	align-items: center;
 }
 
 .left-part {
