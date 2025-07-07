@@ -65,6 +65,7 @@
 
 	--space: 50px;
 	--space-gap: 30px;
+	--space-logo: 10px;
 	--space-button: 15px;
 	--space-hero: 100px;
 	--space-footer: 15px;
@@ -77,6 +78,8 @@
 
 	--bg-shadow: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
 	--bg-logo: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
+
+	--mobile-size: 550px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -103,12 +106,19 @@ main {
 	margin: var(--space);
 }
 
+main article {
+	padding: var(--space-gap);
+}
+
+/* HEADER */
+
 #hero-header {
 	display: flex;
 	justify-content: space-between;
 	margin: 0 var(--space-hero);
 	height: 80vh;
 }
+
 #hero-header div {
 	display: flex;
 	justify-content: center;
@@ -121,6 +131,7 @@ main {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 25px;
+	text-align: right;
 }
 
 .button-primary {
@@ -136,14 +147,18 @@ main {
 	gap: var(--space-gap);
 }
 
+#projects-container {
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: (160px, auto);
+}
+
 #skill-section {
 	grid-template-columns: repeat(2, 1fr);
 	grid-auto-rows: 1fr;
 }
 
-#projects-container {
-	grid-template-columns: repeat(3, 1fr);
-	grid-auto-rows: (160px, auto);
+#skill-section ul {
+	margin: 0;
 }
 
 #projects-container a,
@@ -177,14 +192,12 @@ main {
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.project-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
 #skills section {
 	background-color: var(--bg-color-project);
+}
+
+#skill-section section h4 {
+	margin-top: 0;
 }
 
 .logo {
@@ -222,7 +235,11 @@ main {
 	background-color: var(--bg-color-project-opacity);
 	backdrop-filter: blur(0.15rem);
 	transition: var(--time-transition);
-	height: 92%;
+	height: 79%;
+}
+
+.dark-filter-hover {
+	flex-direction: column;
 }
 
 .background-blurred {
@@ -263,18 +280,18 @@ main {
 	grid-column: 2 / 4;
 }
 
-#projects aside {
+.project-logo-container {
 	display: flex;
-	flex-direction: column;
-	gap: var(--space);
+	justify-content: right;
+	gap: var(--space-logo);
 }
 
 .grid-logo-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	height: fit-content;
-	gap: var(--space);
-	margin: var(--space);
+	gap: var(--space-logo);
+	margin-left: var(--space-logo);
 }
 
 #technology-description {
@@ -291,9 +308,11 @@ main {
 	align-items: center;
 }
 
-.left-part {
+.left-part-techno {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 
 footer {
@@ -312,5 +331,5 @@ footer {
 
 .list-logo {
 	display: flex;
-	gap: var(--space);
+	gap: var(--space-logo);
 }
