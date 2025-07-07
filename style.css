@@ -72,6 +72,7 @@
 	--logo-size: 30px;
 	--logo-size-mobile: 25px;
 	--padding-hero: 10vw;
+	--padding-article: 45px;
 	--padding-logo: 45px;
 	--padding-logo-mobile: 35px;
 	--padding-section: 15px;
@@ -104,12 +105,8 @@ a {
 	text-decoration: none;
 }
 
-main {
-	margin: var(--space);
-}
-
 main article {
-	padding: var(--space-gap);
+	padding: var(--padding-article);
 }
 
 /* HEADER */
@@ -123,9 +120,13 @@ main article {
 
 #hero-header div {
 	display: flex;
-	justify-content: center;
+	
 	flex-direction: column;
 	height: 100%;
+}
+
+#left-part-hero {
+	justify-content: center;
 }
 
 #right-part-hero {
@@ -134,15 +135,20 @@ main article {
 	font-style: normal;
 	font-size: 25px;
 	text-align: right;
+	justify-content: end;
 }
 
 .button-primary {
-	background-color: var(--sec-color-500);
+	background-color: var(--sec-color-200);
 	padding: var(--space-button);
 	border-radius: var(--space-button);
 }
 
 /* PROJECTS - SKILLS */
+
+#projects {
+	background-color: var(--sec-color-200);
+}
 
 #projects-container,
 #skill-container {
@@ -337,7 +343,7 @@ footer {
 	gap: var(--space-logo);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 	main {
 		margin: 0;
 	}
