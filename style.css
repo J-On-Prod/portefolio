@@ -169,9 +169,6 @@ main {
 }
 
 #projects-container section {
-}
-
-#projects-container section {
 	height: 100%;
 }
 
@@ -248,7 +245,7 @@ main {
 
 #project-sharepoint {
 	background-image: url(public/images/sharepoint.avif);
-	background-position: center;, 
+	background-position: center;
 }
 
 #project-registration {
