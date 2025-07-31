@@ -1,193 +1,130 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>J-On-Prod Portefolio</title>
-		<link rel="stylesheet" href="style.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://cdn.babylonjs.com/babylon.js"></script>
-		<script src="script.js" defer></script>
-		<script src="script3d.js" defer></script>
-	</head>
-	<body>
-		<header id="hero-header">
-			<div id="left-part-hero">
-				<h1>Jonathan DURAND</h1>
-				<h2>Web Developer Full Stack</h2>
-			</div>
-			<div id="right-part-hero">
+
+<head>
+	<title>J-On-Prod Portefolio</title>
+	<link rel="stylesheet" href="style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://cdn.babylonjs.com/babylon.js"></script>
+	<script src="script.js" defer></script>
+	<script src="script3d.js" defer></script>
+</head>
+
+<body>
+	<header id="hero-header" class="hero-background">
+		<div id="left-part-hero">
+			<h1>Jonathan DURAND</h1>
+			<h2>Web Developer Full Stack</h2>
+		</div>
+		<div id="right-part-hero">
+			<div id="sub-right-part-hero">
 				<p>L'innovation naît</p>
-				<p>de la passion, de la persérérance et du partage</p>
+				<p>de la passion, de la persévérance et du partage</p>
 			</div>
-		</header>
-		<main>
-			<article id="projects">
-				<h3>Projects</h3>
-				<div id="projects-container">
-					<a href="project-word.html" id="project-word-container">
-						<section id="project-word">
-							<div class="dark-filter-hover">
-								<div class="project-info">
-									<h4>Word Document Generation And Publish on Docusign</h4>
-								</div>
-								<div class="project-logo-container">
-									<div class="logo">
-										<img src="public/logo/power_platform.svg" alt="Power Platform" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/azure.svg" alt="Azure" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/powershell.svg" alt="PowerShell" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/docusign.svg" alt="Docusign API" />
-									</div>
-								</div>
-							</div>
-						</section>
-					</a>
-					<a href="project-sharepoint.html" id="project-sharepoint-container">
-						<section id="project-sharepoint">
-							<div class="dark-filter-hover">
-								<div class="project-info">
-									<h4>Sharepoint custom interfaces (SharePoint)</h4>
-								</div>
-								<div class="project-logo-container">
-									<div class="logo">
-									<img src="public/logo/react.svg" alt="React" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/sharepoint.svg" alt="SharePoint" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/azure.svg" alt="Azure" />
-									</div>
-								</div>
-							<div/>
-						</section>
-					</a>
-					<a href="project-registration.html" id="project-registration-container">
-						<section id="project-registration">
-							<div class="dark-filter-hover">
-								<div class="project-info">
-									<h4>Creation of registration site for event</h4>
-								</div>
-								<div class="project-logo-container">
-									<div class="logo">
-										<img src="public/logo/next.svg" alt="Next.js" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/prisma.svg" alt="Prisma" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/mongo_db.svg" alt="Mongo DB"/>
-									</div>
-								</div>
-							</div>
-						</section>
-					</a>
-					<a href="project-basic-explorer.html" id="project-basic-explorer-container">
-						<section id="project-basic-explorer">
-							<div class="dark-filter-hover">
-								<div class="project-info">
-									<h4>Search of dependencies on custom ERP BASIC Project</h4>
-								</div>
-								<div class="project-logo-container">
-									<div class="logo">
-										<img src="public/logo/primefaces.svg" alt="PrimeFaces" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/jsf.tiff" alt="JSF" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/d3.svg" alt="D3.js" />
-									</div>
-									<div class="logo">
-										<img src="public/logo/rocket.svg" alt="Rocket Universe" />
-									</div>
-								</div>
-							</div>
-						</section>
-					</a>
-				</div>
-			</article>
-			<article id="skills">
-				<h3>Skills</h3>
-				<div id="skill-container">
-					<section id="techno-section">
-						<div class="left-part-techno">
-							<h4>Technology</h4>
-							<div id="technology-container">
-								<div id="technology-description">
-									<p>Next.js is a Node.js (based on JavaScript) framework with : React, Router, Middleware, ... </p><p><a href='https://nextjs.org/'>Next.js Website</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="grid-logo-container">
-							<div class="logo">
-								<img src="public/logo/next.svg" alt="Next.js" />
-							</div>
-							<div class="logo">
-								<img src="public/logo/python.svg" alt="Python" />
-							</div>
-							<div class="logo">
-								<img src="public/logo/java.svg" alt="Java" />
-							</div>
-							<div class="logo">
-								<img src="public/logo/bash.svg" alt="Bash" />
-							</div>
-							<div class="logo">
-								<img src="public/logo/power_platform.svg" alt="Power Platform" />
-							</div>
-							<div class="logo">
-								<img src="public/logo/powershell.svg" alt="PowerShell" />
-							</div>
-							<div class="logo">
-								<img src="public/logo/azure.svg" alt="Azure" />
-							</div>
-							<div class="logo">
-								<img src="public/logo/sharepoint.svg" alt="SharePoint" />
-							</div>
-							<div class="logo">
-								<img src="public/logo/arduino.svg" alt="Arduino" />
-							</div>
-						</div>
+		</div>
+	</header>
+	<main>
+		<article id="projects">
+			<h3>Projects</h3>
+			<div id="projects-container">
+				<div id="projects-list">
+					<section id="project-word" class="dark-filter-hover projects-list-item">
+						<h4>Word Document Generation And Publish on Docusign</h4>
 					</section>
-					<section>
-						<h4>Others Skills / Hobbies</h4>
-						<ul>
-							<li>Language spoken : French and English</li>
-							<li>User Experience and User Interface sensibility</li>
-							<li>Technology Watch</li>
-							<li>Electronics, Welding, DIY</li>
-							<li>Music creation (Scores for short movies)</li>
-							<li>Swimming</li>
-							<li>Bicycle</li>
-						</ul>
+					<section id="project-sharepoint" class="dark-filter-hover projects-list-item">
+						<h4>Sharepoint custom interfaces (SharePoint)</h4>
+					</section>
+					<section id="project-registration" class="dark-filter-hover projects-list-item">
+						<h4>Creation of registration site for event</h4>
+					</section>
+					<section id="project-basic-explorer" class="dark-filter-hover projects-list-item">
+						<h4>Search of dependencies on custom ERP BASIC Project</h4>
 					</section>
 				</div>
-			</article>
-			<article id="contact">
-				<h3>Contact</h3>
-				<section>
-					<h4>Social Network</h4>
-					<div class="list-logo">
-						<a href="https://github.com/J-On-Prod">
-							<div class="logo">
-								<img src="public/logo/github.svg" alt="GitHub" />
-							</div>
-						</a>
-						<a href="https://www.linkedin.com/in/jonathan-durand-28438b373">
-							<div class="logo">
-								<img src="public/logo/linkedIn.svg" alt="LinkedIn" />
-							</div>
-						</a>
+				<div id="project-info">
+					<div id="project-description">
+
+					</div>
+					<div id="project-techno" class="list-logo">
+
+					</div>
+				</div>
+			</div>
+		</article>
+		<article id="skills">
+			<h3>Skills</h3>
+			<div id="skill-container">
+				<section id="techno-section">
+					<div class="left-part-techno">
+						<h4>Technology</h4>
+						<div id="technology-description">
+								
+						</div>
+					</div>
+					<div class="grid-logo-container">
+						<div class="logo">
+							<img src="public/logo/next.js.svg" alt="Next.js" />
+						</div>
+						<div class="logo">
+							<img src="public/logo/python.svg" alt="Python" />
+						</div>
+						<div class="logo">
+							<img src="public/logo/java.svg" alt="Java" />
+						</div>
+						<div class="logo">
+							<img src="public/logo/bash.svg" alt="Bash" />
+						</div>
+						<div class="logo">
+							<img src="public/logo/power_platform.svg" alt="Power Platform" />
+						</div>
+						<div class="logo">
+							<img src="public/logo/powershell.svg" alt="PowerShell" />
+						</div>
+						<div class="logo">
+							<img src="public/logo/azure.svg" alt="Azure" />
+						</div>
+						<div class="logo">
+							<img src="public/logo/sharepoint.svg" alt="SharePoint" />
+						</div>
+						<div class="logo">
+							<img src="public/logo/arduino.svg" alt="Arduino" />
+						</div>
 					</div>
 				</section>
-			</article>
-		</main>
-		<footer>
-			All rights reserved, J_On_Prod
-		</footer>
-	</body>
+				<section>
+					<h4>Others Skills / Hobbies</h4>
+					<ul>
+						<li>Language spoken : French and English</li>
+						<li>User Experience and User Interface sensibility</li>
+						<li>Technology Watch</li>
+						<li>Electronics, Welding, DIY</li>
+						<li>Music creation (Scores for short movies)</li>
+						<li>Swimming</li>
+						<li>Bicycle</li>
+					</ul>
+				</section>
+			</div>
+		</article>
+		<article id="contact">
+			<h3>Contact</h3>
+			<section>
+				<h4>Social Network</h4>
+				<div class="list-logo">
+					<a href="https://github.com/J-On-Prod">
+						<div class="logo">
+							<img src="public/logo/github.svg" alt="GitHub" />
+						</div>
+					</a>
+					<a href="https://www.linkedin.com/in/jonathan-durand-28438b373">
+						<div class="logo">
+							<img src="public/logo/linkedIn.svg" alt="LinkedIn" />
+						</div>
+					</a>
+				</div>
+			</section>
+		</article>
+	</main>
+	<footer>All rights reserved, J_On_Prod</footer>
+</body>
+
 </html>

@@ -64,7 +64,7 @@
 	--primary-color: #3b56d9;
 
 	--space: 50px;
-	--space-gap: 30px;
+	--space-gap: 20px;
 	--space-logo: 10px;
 	--space-button: 15px;
 	--space-footer: 15px;
@@ -114,8 +114,8 @@ main article {
 #hero-header {
 	display: flex;
 	justify-content: space-between;
-	margin: 0 var(--padding-hero);
-	height: 80vh;
+	padding: 0 var(--padding-hero);
+	height: 100vh;
 }
 
 #hero-header div {
@@ -136,6 +136,12 @@ main article {
 	font-size: 25px;
 	text-align: right;
 	justify-content: end;
+}
+
+#sub-right-part-hero {
+	display: flex;
+	justify-content: end;
+	padding-bottom: 30vh;
 }
 
 .button-primary {
@@ -159,6 +165,24 @@ main article {
 #projects-container {
 	grid-template-columns: repeat(3, 1fr);
 	grid-auto-rows: (160px, auto);
+}
+
+#projects-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-gap);
+}
+
+#project-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	grid-column: 2/4;
+	height: 100%;
+}
+
+#project-techno {
+	align-self: flex-end;
 }
 
 #skill-container {
@@ -192,10 +216,6 @@ main article {
 	box-shadow: var(--bg-shadow);
 }
 
-#projects-container section {
-	height: 100%;
-}
-
 .partial-project-info {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -215,56 +235,18 @@ main article {
 	backdrop-filter: blur(0.2rem);
 }
 
-.dark-filter-header,
 .dark-filter-hover {
 	display: flex;
 	flex: 1 var(--padding-logo);
 	background-color: var(--bg-color-project-opacity);
 	backdrop-filter: blur(0.15rem);
 	transition: var(--time-transition);
-	height: 79%;
-}
-
-.dark-filter-hover {
 	flex-direction: column;
-}
-
-.background-blurred {
-	height: 100%;
 }
 
 .dark-filter-hover:hover {
 	background-color: var(--bg-color-project-opacity-hover);
 	backdrop-filter: blur(0rem);
-}
-
-#project-word-container {
-	grid-column: 1 / 3;
-}
-
-#project-word {
-	background-image: url(public/images/word.avif);
-	background-position: top center;
-}
-
-#project-sharepoint {
-	background-image: url(public/images/sharepoint.avif);
-	background-position: center;
-}
-
-#project-registration {
-	background-image: url(public/images/registration.avif);
-	background-position: top left;
-	color: var(--whi-color-50);
-}
-
-#project-basic-explorer {
-	background-image: url(public/images/diagram.avif);
-	background-position: top center;
-}
-
-#project-basic-explorer-container {
-	grid-column: 2 / 4;
 }
 
 .project-logo-container {
@@ -305,11 +287,16 @@ main article {
 
 #technology-description {
 	text-align: right;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 
 #technology-description a {
 	text-decoration: underline;
 }
+
 
 #techno-section {
 	display: grid;

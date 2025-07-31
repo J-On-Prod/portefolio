@@ -1,7 +1,27 @@
 const logos = document.querySelectorAll('.logo');
+const buttonProjects = document.querySelectorAll('.projects-list-item');
 
-const descriptions = {
-	"Next.js": "<p>Next.js is a Node.js (based on JavaScript) framework with : React, Router, Middleware, ... </p><p><a href='https://nextjs.org/'>Next.js Website</a></p>",
+const descriptionProjects = {
+	"project-word": {
+		"description": "<p>This project have goal to detect alls Word editable fields of Users documents, edit type of fields and content, generate Word and track the document completion on Docusign.</p>",
+		"technos": ["Power Platform", "Azure", "PowerShell", "Docusign"]
+	},
+	"project-sharepoint": {
+		"description": "<p>Creation or integration of multiple interfaces and integration on SharePoint. Settings interface for admin is develop on Power Apps</p>",
+		"technos": ["React", "SharePoint", "Azure"]
+	},
+	"project-registration": {
+		"description": "<p>Conception and creation of Registration website with profil picture, payment with HelloAsso API, administration for users admission and event stats.</p>",
+		"technos": ["Next.js", "Prisma", "Mongo DB"]
+	},
+	"project-basic-explorer": {
+		"description": "<p>Search with SQL Rocket Universe Driver the connection between files and dependencies on existing files for show correlation beetween BASIC Scripts and showing all on graph and possiblity to show dependencies and call of each script.</p>",
+		"technos": ["PrimeFaces", "jsf", "D3.js"]
+	},
+};
+
+const descriptionsTechnos = {
+	"Next.js": "<p>Next.js is a Node.js (based on JavaScript) framework with : React, Router, Middleware, ... </p><p><a href='https://nextjs.org/'>Next.js website</a></p>",
 	"Python": "<p>Python is a interpreted language with flexible syntax for develop extermely speedly scritps, projects, ... </p><p><a href='https://www.python.org/'>Python website</a></p>",
 	"Java": "<p>OOP Language can be transportable on other OS (Windows, Linux, MacOS, Android). It's used on a lot of popular projects </p><p><a href='https://www.java.com'>Java website</a></p>",
 	"Bash": "<p>Terminal language for linux, really popular on developer community. </p><p><a href='https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html'>BASH manual</a></p>",
@@ -12,19 +32,45 @@ const descriptions = {
 	"Arduino": "<p>Framework in C use for embedded system like Arduino Uno, ESP32, Raspberry Pico, ... </p><p><a href='https://www.arduino.cc/'>Arduino website</a></p>",
 };
 
-/**
+/**	
  * Change the description content
- */
+*/
 function changeDescriptions(technoName) {
 	console.log(technoName);
-	if (technoName in descriptions) {
+	if (technoName in descriptionsTechnos) {
 		const descriptionDiv = document.querySelector('#technology-description');
 		console.log(technoName, descriptionDiv);
-		descriptionDiv.innerHTML = descriptions[technoName];
+		descriptionDiv.innerHTML = descriptionsTechnos[technoName];
 	}
 }
 
 /**
+ * Créer les images pour y mettre le logo
+ * @param {string} technoName 
+ */
+function createLogoDiv(technosName) {
+	let listLogos = "";
+	technosName.forEach(technoName => {
+		const logoURL = technoName.replaceAll(' ', '_').toLowerCase() + ".svg";
+		listLogos += `<div class="logo"><img src="public/logo/${logoURL}" alt="${technoName}"></div>\n`;
+	});		
+	return listLogos;
+}
+
+/**
+ * Change the information on project info part
+ * @param {string} projectID 
+ */
+function changeProjectInformation(projectID) {
+	const projectInfo = descriptionProjects[projectID];
+	const descriptionDiv = document.querySelector('#project-description');
+	descriptionDiv.innerHTML = projectInfo.description;
+	const technoDiv = document.querySelector('#project-techno');
+	technoDiv.innerHTML = createLogoDiv(projectInfo.technos);
+}
+
+/**
+ * FIXME : Does not work anymore
  * Action when the mouse go over the div
  */
 function logoOnOver(eventLogo) {
@@ -39,6 +85,22 @@ function logoOnOver(eventLogo) {
 	changeDescriptions(altName);
 }
 
+function projectOnOver(eventButtonProject) {
+	const projectID = eventButtonProject.target.id;
+	if (!!projectID && projectID !== "") {
+		changeProjectInformation(eventButtonProject.target.id);
+	}
+}
+
 logos.forEach((logo) => {
 	logo.addEventListener("mouseover", logoOnOver);
 });
+
+buttonProjects.forEach((project) => {
+	project.addEventListener("mouseover", projectOnOver)
+})
+
+window.onload = function() {
+	changeDescriptions(logos[0].id);
+	changeProjectInformation(buttonProjects[0].id);
+};
