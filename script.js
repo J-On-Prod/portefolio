@@ -1,5 +1,6 @@
 const logos = document.querySelectorAll('.logo');
 const buttonProjects = document.querySelectorAll('.projects-list-item');
+const buttonProjectstTitles = document.querySelectorAll('.projects-list-item h4');
 
 const descriptionProjects = {
 	"project-word": {
@@ -34,6 +35,7 @@ const descriptionsTechnos = {
 
 /**	
  * Change the description content
+ * @param {string} technoName : technology name
 */
 function changeDescriptions(technoName) {
 	console.log(technoName);
@@ -73,7 +75,7 @@ function changeProjectInformation(projectID) {
  * FIXME : Does not work anymore
  * Action when the mouse go over the div
  */
-function logoOnOver(eventLogo) {
+function logoOnClick(eventLogo) {
 	let altName = "";
 	const localName = eventLogo.target.localName;
 	const className = eventLogo.target.className;
@@ -85,22 +87,43 @@ function logoOnOver(eventLogo) {
 	changeDescriptions(altName);
 }
 
-function projectOnOver(eventButtonProject) {
+/**
+ * Manage when user click on div button project
+ * @param {event onClick} eventButtonProject 
+ */
+function projectOnClick(eventButtonProject) {
 	const projectID = eventButtonProject.target.id;
 	if (!!projectID && projectID !== "") {
 		changeProjectInformation(eventButtonProject.target.id);
 	}
 }
 
+/**
+ * Manage when user click on text project
+ * @param {event onClick} eventTextProject 
+ */
+function projectTextOnClick(eventTextProject) {
+	const projectID = eventTextProject.target.parentNode.id;
+	if (!!projectID && projectID !== "") {
+		changeProjectInformation(projectID);
+	}
+}
+
+// Add all click listener
 logos.forEach((logo) => {
-	logo.addEventListener("mouseover", logoOnOver);
+	logo.addEventListener("click", logoOnClick);
 });
 
 buttonProjects.forEach((project) => {
-	project.addEventListener("mouseover", projectOnOver)
+	project.addEventListener("click", projectOnClick)
 })
 
+buttonProjectstTitles.forEach((project) => {
+	project.addEventListener("click", projectTextOnClick)
+})
+
+// When the page loading, set the first elements of list
 window.onload = function() {
-	changeDescriptions(logos[0].id);
+	changeDescriptions(logos[0].firstElementChild.alt);
 	changeProjectInformation(buttonProjects[0].id);
 };

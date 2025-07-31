@@ -69,12 +69,12 @@
 	--space-button: 15px;
 	--space-footer: 15px;
 	--border-section: 15px;
-	--logo-size: 30px;
-	--logo-size-mobile: 25px;
+	--logo-size: 35px;
+	--logo-size-mobile: 40px;
 	--padding-hero: 10vw;
 	--padding-article: 45px;
-	--padding-logo: 45px;
-	--padding-logo-mobile: 35px;
+	--padding-logo: 50px;
+	--padding-logo-mobile: 55px;
 	--padding-section: 15px;
 
 	--time-transition: 0.3s;
@@ -116,6 +116,7 @@ main article {
 	justify-content: space-between;
 	padding: 0 var(--padding-hero);
 	height: 100vh;
+	background: linear-gradient(120deg, var(--pri-color-200) 0%, var(--sec-color-200) 100%);
 }
 
 #hero-header div {
@@ -127,6 +128,12 @@ main article {
 
 #left-part-hero {
 	justify-content: center;
+}
+
+#sub-left-part-hero {
+	display: flex;
+	justify-content: start;
+	padding-top: 30vh;
 }
 
 #right-part-hero {
@@ -233,6 +240,10 @@ main article {
 	background-repeat: no-repeat;
 	background-size: cover;
 	backdrop-filter: blur(0.2rem);
+}
+
+.projects-list-item, .projects-list-item h4, .grid-logo-container .logo {
+	cursor: pointer;
 }
 
 .dark-filter-hover {
