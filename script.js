@@ -4,19 +4,23 @@ const buttonProjectstTitles = document.querySelectorAll('.projects-list-item h4'
 
 const descriptionProjects = {
 	"project-word": {
-		"description": "<p>This project have goal to detect alls Word editable fields of Users documents, edit type of fields and content, generate Word and track the document completion on Docusign.</p>",
+		"descriptionEn": `<p>This project have goal to detect alls Word editable fields of Users documents, edit type of fields and content, generate Word and track the document completion on Docusign.</p>
+		<p>The application work with Power Apps for the client side, Power Automate and Azure Function Apps (PowerShell) for the server side</p>`,
 		"technos": ["Power Platform", "Azure", "PowerShell", "Docusign"]
 	},
 	"project-sharepoint": {
-		"description": "<p>Creation or integration of multiple interfaces and integration on SharePoint. Settings interface for admin is develop on Power Apps</p>",
+		"descriptionEn": `<p>Creation or integration of multiple interfaces and integration on SharePoint with SPFx (Framework for develop SharePoint widgets, menu, ...).</p>
+		<p> Settings interface for admin is develop on Power Apps and Power Automate</p>`,
 		"technos": ["React", "SharePoint", "Azure"]
 	},
 	"project-registration": {
-		"description": "<p>Conception and creation of Registration website with profil picture, payment with HelloAsso API, administration for users admission and event stats.</p>",
+		"descriptionEn": `<p>Conception and creation of Registration website with profil picture, payment with HelloAsso API, administration for users admission and event stats.</p>
+		<p>The application use Next.js for the client/server side and Mongo DB for the database</p>`,
 		"technos": ["Next.js", "Prisma", "Mongo DB"]
 	},
 	"project-basic-explorer": {
-		"description": "<p>Search with SQL Rocket Universe Driver the connection between files and dependencies on existing files for show correlation beetween BASIC Scripts and showing all on graph and possiblity to show dependencies and call of each script.</p>",
+		"descriptionEn": `<p>Search with SQL Rocket Universe Driver the connection between files and dependencies on existing files for show correlation beetween BASIC Scripts and showing all on graph and possiblity to show dependencies and call of each script.</p>
+		<p>The application use JSF with PrimeFaces component and D3.js for the representation of file graph and CodeMirror for viewing the content of file</p>`,
 		"technos": ["PrimeFaces", "jsf", "D3.js"]
 	},
 };
@@ -66,7 +70,7 @@ function createLogoDiv(technosName) {
 function changeProjectInformation(projectID) {
 	const projectInfo = descriptionProjects[projectID];
 	const descriptionDiv = document.querySelector('#project-description');
-	descriptionDiv.innerHTML = projectInfo.description;
+	descriptionDiv.innerHTML = projectInfo.descriptionEn;
 	const technoDiv = document.querySelector('#project-techno');
 	technoDiv.innerHTML = createLogoDiv(projectInfo.technos);
 }
