@@ -37,30 +37,35 @@ const descriptionsTechnos = {
 	"Arduino": "<p>Framework in C use for embedded system like Arduino Uno, ESP32, Raspberry Pico, ... </p><p><a href='https://www.arduino.cc/'>Arduino website</a></p>",
 };
 
-/**	
+/**
  * Change the description content
  * @param {string} technoName : technology name
 */
 function changeDescriptions(technoName) {
-	console.log(technoName);
 	if (technoName in descriptionsTechnos) {
 		const descriptionDiv = document.querySelector('#technology-description');
-		console.log(technoName, descriptionDiv);
 		descriptionDiv.innerHTML = descriptionsTechnos[technoName];
 	}
 }
 
 /**
  * Créer les images pour y mettre le logo
- * @param {string} technoName 
+ * @param {string} technoName
  */
 function createLogoDiv(technosName) {
 	let listLogos = "";
 	technosName.forEach(technoName => {
 		const logoURL = technoName.replaceAll(' ', '_').toLowerCase() + ".svg";
 		listLogos += `<div class="logo"><img src="public/logo/${logoURL}" alt="${technoName}"></div>\n`;
-	});		
+	});
 	return listLogos;
+}
+
+function selectProject(projectSelected) {
+	for (const project of buttonProjects) {
+		project.classList.remove("project-selected");
+	}
+	projectSelected.classList.add("project-selected");
 }
 
 /**
@@ -93,22 +98,26 @@ function logoOnClick(eventLogo) {
 
 /**
  * Manage when user click on div button project
- * @param {event onClick} eventButtonProject 
+ * @param {event onClick} eventButtonProject
  */
 function projectOnClick(eventButtonProject) {
-	const projectID = eventButtonProject.target.id;
+	const project = eventButtonProject.target;
+	const projectID = project.id;
 	if (!!projectID && projectID !== "") {
+		selectProject(project);
 		changeProjectInformation(eventButtonProject.target.id);
 	}
 }
 
 /**
  * Manage when user click on text project
- * @param {event onClick} eventTextProject 
+ * @param {event onClick} eventTextProject
  */
 function projectTextOnClick(eventTextProject) {
-	const projectID = eventTextProject.target.parentNode.id;
+	const project = eventTextProject.target.parentNode;
+	const projectID = project.id;
 	if (!!projectID && projectID !== "") {
+		selectProject(project);
 		changeProjectInformation(projectID);
 	}
 }

@@ -121,7 +121,6 @@ main article {
 
 #hero-header div {
 	display: flex;
-	
 	flex-direction: column;
 	height: 100%;
 }
@@ -255,7 +254,7 @@ main article {
 	flex-direction: column;
 }
 
-.dark-filter-hover:hover {
+.dark-filter-hover:hover:not(.project-selected) {
 	background-color: var(--bg-color-project-opacity-hover);
 	backdrop-filter: blur(0rem);
 }
@@ -264,6 +263,10 @@ main article {
 	display: flex;
 	justify-content: right;
 	gap: var(--space-logo);
+}
+
+.project-selected {
+	background-color: var(--sec-color-400);
 }
 
 .grid-logo-container {
