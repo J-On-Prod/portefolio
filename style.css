@@ -1,22 +1,22 @@
 :root {
-	--pri-color: #FBA314;
-	/* Yellow Orange */
+	/*--pri-color: #FBA314;
+	 Yellow Orange */
 	--sec-color: #173C54;
 	/* Blue Dark */
-	--thi-color: #2B928F;
+	--pri-color: #2B928F;
 	/* Green cyan */
 
-	--pri-color-50: #FFF1E8;
-	--pri-color-100: #FFE0CA;
-	--pri-color-200: #FEC38F;
-	--pri-color-300: #FBA314;
-	--pri-color-400: #D3880F;
-	--pri-color-500: #B0710A;
-	--pri-color-600: #8B5806;
-	--pri-color-700: #6B4303;
-	--pri-color-800: #492C02;
-	--pri-color-900: #2D1901;
-	--pri-color-950: #1C0E00;
+	--pri-color-50: #C8FEFC;
+	--pri-color-100: #53FCF7;
+	--pri-color-200: #47E1DC;
+	--pri-color-300: #3DC9C2;
+	--pri-color-400: #34ABA8;
+	--pri-color-500: #2B928F;
+	--pri-color-600: #207371;
+	--pri-color-700: #165655;
+	--pri-color-800: #0C3B3A;
+	--pri-color-900: #042221;
+	--pri-color-950: #021616;
 
 	--sec-color-50: #EDF4FD;
 	--sec-color-100: #DAEAFB;
@@ -29,18 +29,6 @@
 	--sec-color-800: #214F6E;
 	--sec-color-900: #173C54;
 	--sec-color-950: #0A2231;
-
-	--thi-color-50: #C8FEFC;
-	--thi-color-100: #53FCF7;
-	--thi-color-200: #47E1DC;
-	--thi-color-300: #3DC9C2;
-	--thi-color-400: #34ABA8;
-	--thi-color-500: #2B928F;
-	--thi-color-600: #207371;
-	--thi-color-700: #165655;
-	--thi-color-800: #0C3B3A;
-	--thi-color-900: #042221;
-	--thi-color-950: #021616;
 
 	--whi-color-50: #F3F3F4;
 	--whi-color-100: #E5E5E7;
@@ -59,7 +47,7 @@
 	--code-yellow: #ffd945;
 
 	--bg-color: var(--whi-color-50);
-	--bg-color-project: var(--pri-color-100);
+	--bg-color-project: var(--pri-color-300);
 	--bg-color-project-opacity: rgba(60, 60, 60, 0.25);
 	--bg-color-project-opacity-hover: rgba(60, 60, 60, 0.15);
 	--color-font: var(--sec-color-950);
@@ -88,7 +76,7 @@
 
 	--time-transition: 0.3s;
 
-	--bg-shadow: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
+	--bg-shadow: rgba(0, 0, 0, 0.25) 0px 0px 8px, rgba(0, 0, 0, 0.45) 0px 0px 8px;
 	--bg-logo: rgba(0, 0, 0, 0.25) 0px 3px 6px, rgba(0, 0, 0, 0.45) 0px 3px 6px;
 
 	--mobile-size: 550px;
@@ -143,10 +131,16 @@ h4 {
 
 #hero-header {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: center;
 	padding: 0 var(--padding-hero);
 	height: 100vh;
-	background: radial-gradient(at 0% 0%, var(--pri-color-200) 0%, var(--sec-color-100) 70%);
+	background: radial-gradient(at 0% 0%, var(--pri-color-300) 0%, var(--sec-color-50) 70%);
+}
+
+#hero-part-top {
+	display: flex;
+	justify-content: space-between;
 }
 
 #left-part-hero {
@@ -174,9 +168,12 @@ h4 {
 
 
 .button-primary {
-	background-color: var(--sec-color-200);
+	background-color: var(--sec-color-300);
 	padding: var(--space-button);
 	border-radius: var(--space-button);
+	cursor: pointer;
+	text-align: center;
+	box-shadow: 0px 0px 10px var(--sec-color-800);
 }
 
 /* CODE PART */
@@ -188,7 +185,7 @@ h4 {
 	padding: 20px;
 	border-radius: 20px;
 	box-shadow: 0px 0px 20px var(--sec-color-950);
-	min-width: 500px;
+	min-width: clamp(300px, 35vh ,600px);
 }
 
 .code-block p {
@@ -223,12 +220,10 @@ h4 {
 
 .cursor {
 	background-color: var(--sec-color-100);
-	width: 0.25rem;
+	width: 0.15rem;
 	height: 1.75rem;
 	animation: blink 1s infinite;
 }
-
-
 
 @keyframes blink {
 
@@ -245,8 +240,8 @@ h4 {
 
 /* PROJECTS - SKILLS */
 
-#projects {
-	background-color: var(--sec-color-100);
+main article {
+	background-color: var(--sec-color-50);
 }
 
 #projects-container,
@@ -314,10 +309,6 @@ h4 {
 	grid-template-columns: repeat(2, 1fr);
 }
 
-#skills {
-	background-color: var(--pri-color-50);
-}
-
 #skills section {
 	background-color: var(--bg-color-project);
 }
@@ -341,14 +332,14 @@ h4 {
 .dark-filter-hover {
 	display: flex;
 	flex: 1 var(--padding-logo);
-	background-color: var(--bg-color-project-opacity);
+	background-color: var(--sec-color-200);
 	backdrop-filter: blur(0.15rem);
 	transition: var(--time-transition);
 	flex-direction: column;
 }
 
 .dark-filter-hover:hover:not(.project-selected) {
-	background-color: var(--bg-color-project-opacity-hover);
+	background-color: var(--sec-color-300);
 	backdrop-filter: blur(0rem);
 }
 
@@ -437,12 +428,16 @@ footer {
 	gap: var(--space-logo);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 950px) {
 	main {
 		margin: 0;
 	}
 
 	#hero-header {
+		flex-direction: column;
+	}
+
+	#hero-part-top {
 		flex-direction: column;
 	}
 
