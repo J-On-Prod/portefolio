@@ -1,4 +1,5 @@
 const logos = document.querySelectorAll('.logo');
+const buttonNav = document.querySelectorAll('nav .dark-filter-hover');
 const buttonProjects = document.querySelectorAll('.projects-list-item');
 const buttonProjectstTitles = document.querySelectorAll('.projects-list-item h4');
 
@@ -121,6 +122,12 @@ function projectTextOnClick(eventTextProject) {
 		changeProjectInformation(projectID);
 	}
 }
+
+function navOnClick(eventNavDiv) {
+	const nav = eventNavDiv.target;
+	const navID = nav.id;
+}
+
 
 // Add all click listener
 logos.forEach((logo) => {
