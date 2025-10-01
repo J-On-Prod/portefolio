@@ -217,7 +217,12 @@ nav a .dark-filter-hover {
 }
 
 .code-block p {
-	margin: 0.5em;
+	margin: 0;
+	line-height: 2em;
+}
+
+.code-block a {
+	color: var(--code-yellow);
 }
 
 .code-line {
@@ -240,10 +245,6 @@ nav a .dark-filter-hover {
 	display: inline-flex;
 	align-items: center;
 	margin-bottom: 0.5em;
-}
-
-.code-line-cursor p {
-	margin: 0 0.5em;
 }
 
 .cursor {
@@ -337,7 +338,7 @@ main article {
 	grid-template-columns: repeat(2, 1fr);
 }
 
-#skills section {
+#skills #other-section {
 	background-color: var(--bg-color-project);
 }
 
@@ -412,10 +413,9 @@ main article {
 }
 
 #technology-description {
-	text-align: right;
 	display: flex;
+	font-size: large;
 	flex-direction: column;
-	justify-content: space-between;
 	height: 100%;
 }
 
@@ -440,7 +440,7 @@ main article {
 footer {
 	background-color: var(--bg-color-project);
 	text-align: center;
-	padding: var(--space-footer);
+	padding: var(--space-footer) var(--space-footer) 7.5em var(--space-footer);
 }
 
 /* PROJECT DETAIL */
