@@ -1,4 +1,4 @@
-const logos = document.querySelectorAll('.logo');
+const logosTech = document.querySelectorAll('.logo-tech');
 const buttonNav = document.querySelectorAll('nav .dark-filter-hover');
 const buttonProjects = document.querySelectorAll('.projects-list-item');
 const buttonProjectstTitles = document.querySelectorAll('.projects-list-item h4');
@@ -26,35 +26,87 @@ const descriptionProjects = {
 	},
 };
 
+function createCodeLine(lineNumber, contentLine, codeLine) {
+	let classLine = "";
+	if (codeLine) {
+		classLine = "class='code-line-cursor'";
+	}
+	return `<div ${classLine}>
+		<p>
+			<span class="code-line">${lineNumber} </span>
+			${contentLine}
+		</p>
+	</div>`;
+}
+
+function createCodePart(listElement) {
+	let res = "";
+	let lineNumber = 1;
+
+	for (const contentLine of listElement) {
+		res += createCodeLine(lineNumber, contentLine, false);
+		lineNumber++;
+	}
+
+	res += createCodeLine(lineNumber, "<p>&nbsp;<div class='cursor'></div></p>", true);
+	return res;
+}
+
+const headerCodeHero = [
+	"L'innovation naît :",
+	"&nbsp;&nbsp;- du <span class='code-red'>partage</span>,",
+	"&nbsp;&nbsp;- de la <span class='code-green'>passion</span>,",
+	"&nbsp;&nbsp;- de la <span class='code-yellow'>persévérance</span>",
+];
+
 const descriptionsTechnos = {
-	"Next.js": `<p><span class='code-line'>1 </span>Next.js is a Node.js (based on JavaScript) framework with : React, Router, Middleware, ... </p>
-	<p><span class='code-line'>2 </span><a href='https://nextjs.org/'>Website : Next.js</a></p>`,
-	"Python": `<p><span class='code-line'>1 </span>Python is a interpreted language with flexible syntax for develop extermely speedly scritps, projects, ... </p>
-	<p><span class='code-line'>2 </span><a href='https://www.python.org/'>Website : Python </a></p>`,
-	"Java": `<p><span class='code-line'>1 </span>OOP Language can be transportable on other OS (Windows, Linux, MacOS, Android). It's used on a lot of popular projects </p>
-	<p><span class='code-line'>2 </span><a href='https://www.java.com'>Website : Java</a></p>`,
-	"Bash": `<p><span class='code-line'>1 </span>Terminal language for linux, really popular on developer community. </p>
-	<p><span class='code-line'>2 </span><a href='https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html'>Website : BASH manual</a></p>`,
-	"Power Platform": `<p><span class='code-line'>1 </span>Low Code develop by Microsoft, Could create interface and flow with less code and more.</p>
-	<p><span class='code-line'>2 </span><a href='https://www.microsoft.com/power-platform'>Website : Power Platform</a></p>`,
-	"PowerShell": `<p><span class='code-line'>1 </span>Terminal language for Microsoft and replace the legacy command line.</p>
-	<p><span class='code-line'>2 </span><a href='https://learn.microsoft.com/powershell/scripting/overview?view=powershell-7.5'>Website : PowerShell presentation</a></p>`,
-	"Azure": `<p><span class='code-line'>1 </span>Platform who groups a lot of Microsoft services : Administration Panels, Function Apps, Synapse, ... </p>
-	<p><span class='code-line'>2 </span><a href='https://azure.microsoft.com'>Website : Azure</a></p>`,
-	"SharePoint": `<p><span class='code-line'>1 </span>Use for entreprise for sharing documents, forms, news, ... </p>
-	<p><span class='code-line'>2 </span><a href='https://www.microsoft.com/microsoft-365/sharepoint/collaboration'>Website : SharePoint</a></p>`,
-	"Arduino": `<p><span class='code-line'>1 </span>Framework in C use for embedded system like Arduino Uno, ESP32, Raspberry Pico, ... </p>
-	<p><span class='code-line'>2 </span><a href='https://www.arduino.cc/'>Website : Arduino</a></p>`,
+	"Next.js": [
+		"Next.js is a Node.js (based on JavaScript) framework with : React, Router, Middleware, ...",
+		"<a href='https://nextjs.org/'>Website : Next.js</a>",
+	],
+	"Python": [
+		"Python is a interpreted language with flexible syntax for develop extermely speedly scritps, projects, ... </p>",
+		"<a href='https://www.python.org/'>Website : Python </a>"
+	],
+	"Java": [
+		"OOP Language can be transportable on other OS (Windows, Linux, MacOS, Android). It's used on a lot of popular projects </p>",
+		"<a href='https://www.java.com'>Website : Java</a>"
+	],
+	"Bash": [
+		"Terminal language for linux, really popular on developer community.",
+		"<a href='https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html'>Website : BASH manual</a>"
+	],
+	"Power Platform": [
+		"Low Code develop by Microsoft, Could create interface and flow with less code and more.",
+		"<a href='https://www.microsoft.com/power-platform'>Website : Power Platform</a>",
+	],
+	"PowerShell": [
+		"Terminal language for Microsoft and replace the legacy command line.",
+		"<a href='https://learn.microsoft.com/powershell/scripting/overview?view=powershell-7.5'>Website : PowerShell presentation</a>",
+	],
+	"Azure": [
+		"Platform who groups a lot of Microsoft services : Administration Panels, Function Apps, Synapse, ... ",
+		"<a href='https://azure.microsoft.com'>Website : Azure</a>"
+	],
+	"SharePoint": [
+		"Use for entreprise for sharing documents, forms, news, ...",
+		"<a href='https://www.microsoft.com/microsoft-365/sharepoint/collaboration'>Website : SharePoint</a>"
+	],
+	"Arduino": [
+		"Framework in C use for embedded system like Arduino Uno, ESP32, Raspberry Pico, ... </p>",
+		"<a href='https://www.arduino.cc/'>Website : Arduino</a>",
+	]
 };
+
 
 /**
  * Change the description content
  * @param {string} technoName : technology name
 */
-function changeDescriptions(technoName) {
+function changeTechnoDescriptions(technoName) {
 	if (technoName in descriptionsTechnos) {
 		const descriptionDiv = document.querySelector('#technology-description');
-		descriptionDiv.innerHTML = descriptionsTechnos[technoName];
+		descriptionDiv.innerHTML = createCodePart(descriptionsTechnos[technoName]);
 	}
 }
 
@@ -94,7 +146,7 @@ function changeProjectInformation(projectID) {
  * FIXME : Does not work anymore
  * Action when the mouse go over the div
  */
-function logoOnClick(eventLogo) {
+function logoTechOnClick(eventLogo) {
 	let altName = "";
 	const localName = eventLogo.target.localName;
 	const className = eventLogo.target.className;
@@ -103,7 +155,7 @@ function logoOnClick(eventLogo) {
 	} else if (localName == "div" && className == "logo") {
 		altName = eventLogo.target.firstElementChild.alt;
 	}
-	changeDescriptions(altName);
+	changeTechnoDescriptions(altName);
 }
 
 /**
@@ -139,8 +191,8 @@ function navOnClick(eventNavDiv) {
 
 
 // Add all click listener
-logos.forEach((logo) => {
-	logo.addEventListener("click", logoOnClick);
+logosTech.forEach((logo) => {
+	logo.addEventListener("click", logoTechOnClick);
 });
 
 buttonProjects.forEach((project) => {
@@ -153,6 +205,9 @@ buttonProjectstTitles.forEach((project) => {
 
 // When the page loading, set the first elements of list
 window.onload = function() {
-	changeDescriptions(logos[0].firstElementChild.alt);
+	const heroPart = this.document.querySelector("#sub-right-part-hero");
+	const heroContent = createCodePart(headerCodeHero);
+	heroPart.innerHTML = heroContent;
+	changeTechnoDescriptions(logosTech[0]);
 	changeProjectInformation(buttonProjects[0].id);
 };
